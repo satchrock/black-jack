@@ -1,10 +1,22 @@
 
+/**
+ * Clase Naipe: representa un naipe de la baraja inglesa.
+ * 
+ * @author satchrock
+ *
+ */
 public class Naipe {
-	//Naipe inglés.
 	private int numero;
 	private final String palo,nombre;
 	private boolean visible;
 
+	/**
+	 * Constructor.
+	 * 
+	 * @param int numero de la carta
+	 * @param String palo
+	 * @param boolean visibilidad de la carta.
+	 */
 	Naipe(int num, String pal, boolean vis){
 		palo=pal;
 		visible=vis;
@@ -18,41 +30,83 @@ public class Naipe {
 		
 	}
 	
+	/**
+	 * 
+	 * @return int numero.
+	 */
 	public int getNum(){
 		return numero;
 	}
 	
+	/**
+	 * 
+	 * @return String palo.
+	 */
 	public String getPalo(){
 		return palo;
 	}
 	
+	/**
+	 * Metodo que determina si dos cartas son del mismo palo.
+	 * 
+	 * @param Naipe carta a comparar con la actual.
+	 * 
+	 * @return boolean
+	 */
 	public boolean igualPalo(Naipe n){
 		if(n.getPalo()==palo)return true;
 		else return false;
 	}
 	
+	/**
+	 * Metodo que determina si dos cartas tienen el mismo valor.
+	 * 
+	 * @param Naipe carta a comparar.
+	 * @return
+	 */
 	public boolean igualVal(Naipe n){
 		if(n.getNum()==numero)return true;
 		else return false;
 	}
 	
+	/**
+	 * Devuelve mayor entre carta actual y carta recibida como parametro. 
+	 * 
+	 * @param n
+	 * @return
+	 */
 	public Naipe getMayor(Naipe n){
 		if(n.getNum()>=numero)return n;
 		else return this;
 	}
 	
+	/**
+	 * 
+	 * @param v
+	 */
 	public void setVisible(boolean v){
 		visible=v;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public boolean getVisible(){
 		return visible;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public String getNombre(){
 		return nombre;
 	}
 	
+	/**
+	 * 
+	 */
 	public void cambiarAs(){
 		if(numero==11)numero=1;
 	}
