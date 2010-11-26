@@ -1,13 +1,26 @@
-
+/**
+ * Clase descendiente de JugadorCartas. Representa al crupier.
+ * @author satchrock
+ *
+ */
 public class Crupier extends JugadorCartas {
 	
+	/**
+	 * Constructor.
+	 * 
+	 * @param String nombre
+	 * @param int monto
+	 */
 	Crupier(String n, int m){
 		super(n,m);
 	}
 	
+	/**
+	 * Estrategia del crupier:
+	 * Da vuelta su carta No visible.
+	 * Pide (saca) una carta mientras si cuenta sea menor a 17.
+	 */
 	public int pensar(Mesa m){
-		//Estrategia de crupier...
-		//decide si dar vuelta y plantarse o dar vuelta y pedir carta.
 		darVuelta();
 		if(cuenta<17)
 			do{
@@ -16,24 +29,35 @@ public class Crupier extends JugadorCartas {
 		return 0;
 	}
 	
+	/**
+	 * Metodo que se invoca cuando algun jugador pide un carta.
+	 * @param Maso maso de cartas.
+	 * @return Naipe carta.
+	 */
 	public Naipe darCarta(Maso m){
-		//saca una carta del maso.
 		return m.sacar();
 	}
 	
+	/**
+	 * Reparticion inicial: jugador, crupier(No visible), jugador , crupier.
+	 * @param Jugador jugador al que le reparte.
+	 * @param Maso maso de cartas.
+	 */
 	public void repartir(Jugador j, Maso m){
-		//reparte: jugador, crupier(Dada vuelta), jugador , crupier.
-		j.recibirCarta(darCarta(m));
-		Naipe n=(Naipe)darCarta(m);
-		n.setVisible(false);
-		this.recibirCarta(n);
-		j.recibirCarta(darCarta(m));
-		this.recibirCarta(darCarta(m));
+		j.recibirCarta(darCarta(m));//reparte al jugador
+		Naipe n=(Naipe)darCarta(m);//se saca su carta
+		n.setVisible(false);//debe estar dada vuelta
+		this.recibirCarta(n);//recibe la carta sacada y dada vuelta
+		j.recibirCarta(darCarta(m));//reparte al jugador nuevamente
+		this.recibirCarta(darCarta(m));//se reparte a si mismo
 		
 	}
 	
+	/**
+	 * Da vuelta su carta.Visibilidad True.
+	 */
 	private void darVuelta(){
-		//da vuelta su carta.
+		
 		for(Naipe n : misCartas){
 			if(n.getVisible()==false){
 				n.setVisible(true);
@@ -41,5 +65,6 @@ public class Crupier extends JugadorCartas {
 			}
 		}
 	}
+
 
 }

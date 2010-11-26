@@ -13,8 +13,8 @@ public class Naipe {
 	/**
 	 * Constructor.
 	 * 
-	 * @param int numero de la carta
-	 * @param String palo
+	 * @param int numero de la carta.
+	 * @param String palo.
 	 * @param boolean visibilidad de la carta.
 	 */
 	Naipe(int num, String pal, boolean vis){
@@ -62,7 +62,7 @@ public class Naipe {
 	 * Metodo que determina si dos cartas tienen el mismo valor.
 	 * 
 	 * @param Naipe carta a comparar.
-	 * @return
+	 * @return boolean
 	 */
 	public boolean igualVal(Naipe n){
 		if(n.getNum()==numero)return true;
@@ -72,8 +72,8 @@ public class Naipe {
 	/**
 	 * Devuelve mayor entre carta actual y carta recibida como parametro. 
 	 * 
-	 * @param n
-	 * @return
+	 * @param Naipe carta a comparar.
+	 * @return Naipe mayor.
 	 */
 	public Naipe getMayor(Naipe n){
 		if(n.getNum()>=numero)return n;
@@ -81,30 +81,34 @@ public class Naipe {
 	}
 	
 	/**
+	 * Cambia la visibilidad de la carta.
 	 * 
-	 * @param v
+	 * @param boolean visibilidad.
 	 */
 	public void setVisible(boolean v){
 		visible=v;
 	}
 	
 	/**
+	 * Obtiene la visibilidad de la carta.
 	 * 
-	 * @return
+	 * @return boolean (True si es visible)
 	 */
 	public boolean getVisible(){
 		return visible;
 	}
 	
 	/**
+	 * Obtiene el nombre (numero + palo) de la carta.
 	 * 
-	 * @return
+	 * @return String nombre.
 	 */
 	public String getNombre(){
 		return nombre;
 	}
 	
 	/**
+	 * Cambia el valor de la carta 11 a 1.
 	 * 
 	 */
 	public void cambiarAs(){

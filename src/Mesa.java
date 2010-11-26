@@ -8,12 +8,11 @@ import java.util.Vector;
  *
  */
 public class Mesa {
-	//Clase mesa. Contene un jugador un crupier y un maso de cartas.
 	private Jugador jugador;
 	private Crupier crupier;
 	private Maso maso;
 	private String ganador;
-	private long apuesta;//cantidad apostada por jugador.
+	private long apuesta;//cantidad apostada por el/los jugador/es.
 	
 	/**
 	 * Default constructor.
@@ -31,7 +30,7 @@ public class Mesa {
 	
 	
 	/**
-	 * 
+	 * Si el crupier gana la mano.
 	 */
 	private void ganaCrupier(){
 		ganador=crupier.getNombre();
@@ -39,7 +38,7 @@ public class Mesa {
 	}
 	
 	/**
-	 * 
+	 * Si el jugador gana la mano.
 	 */
 	private void ganaJugador(){
 		ganador=jugador.getNombre();
@@ -48,7 +47,7 @@ public class Mesa {
 	}
 	
 	/**
-	 * 
+	 * En caso de empate...
 	 */
 	private void empate(){
 		ganador="EMPATE";
