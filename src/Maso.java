@@ -16,22 +16,22 @@ public class Maso {
 	Maso(){
 		//crea Picas
 		for(int i=2; i<15; i++){
-			m.add(new Naipe(i,"PICA",true));
+			m.add(new Naipe(i,"pica",true));
 		}
 		
 		//crea Corazones
 		for(int i=2; i<15; i++){
-			m.add(new Naipe(i,"CORAZON",true));
+			m.add(new Naipe(i,"corazon",true));
 		}
 		
 		//crea Diamantes
 		for(int i=2; i<15; i++){
-			m.add(new Naipe(i,"DIAMANTE",true));
+			m.add(new Naipe(i,"diamante",true));
 		}
 		
 		//crea Treboles
 		for(int i=2; i<15; i++){
-			m.add(new Naipe(i,"TREBOL",true));
+			m.add(new Naipe(i,"trebol",true));
 		}
 	}//constructor
 	

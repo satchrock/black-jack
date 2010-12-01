@@ -20,12 +20,13 @@ public class Mesa {
 	 * @param String nomJugador
 	 */
 	Mesa(String nomJugador){
-		String nomJug=nomJugador;
-		jugador=new Jugador(nomJug,300);
-		crupier =new Crupier("Crupier",2000);
-		ganador="";
-		apuesta=0;
-		maso=new Maso();
+		String nomJug = nomJugador;
+		jugador = new Jugador(nomJug,300);
+		crupier = new Crupier("Crupier",2000);
+		ganador = "";
+		apuesta = 0;
+		maso = new Maso();
+		maso.mezclar();
 	}
 	
 	
@@ -122,6 +123,14 @@ public class Mesa {
 		maso.mezclar();
 	}
 	
+	public Jugador getJugador(){
+		return jugador;
+	}
+	
+	public Crupier getCrupier(){
+		return crupier;
+	}
+	
 	//------------------
 	//metodos de crupier.
 	public int c_getCuenta(){
@@ -164,8 +173,10 @@ public class Mesa {
 	}
 	
 	public void j_apostar(long ap){
-		jugador.apostar(ap);
-		apuesta+=ap;
+		if(jugador.getMonto()-ap >= 0){
+			jugador.apostar(ap);
+			apuesta+=ap;
+		}
 	}
 	
 	public long j_getMonto(){

@@ -21,11 +21,11 @@ public class Naipe {
 		palo=pal;
 		visible=vis;
 		switch(num){
-			case 11:numero=10; nombre="J de "+pal;break;
-			case 12:numero=10; nombre="Q de "+pal;break;
-			case 13:numero=10; nombre="K de "+pal;break;
-			case 14:numero=11; nombre="A de "+pal;break;
-			default:numero=num; nombre=num+" de "+pal; break;
+			case 11:numero=10; nombre="J_de_"+pal;break;
+			case 12:numero=10; nombre="Q_de_"+pal;break;
+			case 13:numero=10; nombre="K_de_"+pal;break;
+			case 14:numero=11; nombre="A_de_"+pal;break;
+			default:numero=num; nombre=num+"_de_"+pal; break;
 		}
 		
 	}

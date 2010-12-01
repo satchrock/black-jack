@@ -59,7 +59,7 @@ public class Crupier extends JugadorCartas {
 	private void darVuelta(){
 		
 		for(Naipe n : misCartas){
-			if(n.getVisible()==false){
+			if(!n.getVisible()){
 				n.setVisible(true);
 				cuenta+=n.getNum();
 			}
