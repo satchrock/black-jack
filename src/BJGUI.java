@@ -29,7 +29,7 @@ import java.util.Vector;
  */
 public class BJGUI extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
-	private static final String PATH_IMG = "./maso/", bj = "BLACK JACK     ", crp = "CRUPIER";
+	private static final String PATH_IMG = "maso/", bj = "BLACK JACK     ", crp = "CRUPIER";
 	private static final Color COLOR_FONDO = new Color(0,128,0),
 							   COLOR_FONDO2 = new Color(127,19,25),
 							   COLOR_TEXTO1 = new Color(129,255,128),
