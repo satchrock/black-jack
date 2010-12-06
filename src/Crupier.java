@@ -20,12 +20,12 @@ public class Crupier extends JugadorCartas {
 	 * Da vuelta su carta No visible.
 	 * Pide (saca) una carta mientras si cuenta sea menor a 17.
 	 */
-	public int pensar(Mesa m){
-		darVuelta();
-		if(cuenta<17)
+	public int pensar(Maso m){
+		if(cuenta<17){
 			do{
-				recibirCarta(darCarta(m.getMaso()));
-			}while(cuenta<17);	
+				recibirCarta(darCarta(m));
+			}while(cuenta<17);
+		}
 		return 0;
 	}
 	
@@ -56,7 +56,7 @@ public class Crupier extends JugadorCartas {
 	/**
 	 * Da vuelta su carta.Visibilidad True.
 	 */
-	private void darVuelta(){
+	public void darVuelta(){
 		
 		for(Naipe n : misCartas){
 			if(!n.getVisible()){

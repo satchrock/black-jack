@@ -21,7 +21,7 @@ public class Jugador extends JugadorCartas {
 	/**
 	 * Metodo que permite al jugador decidir alguna accion sobre el juego.
 	 */
-	public int pensar(Mesa m){
+	public int pensar(Maso m){
 		String[] opciones ={"Pedir Carta","Plantarse"};
 		int ent;
 		ent=JOptionPane.showOptionDialog(null,"Que desea hacer?",nombre,0,3,null,opciones,0);

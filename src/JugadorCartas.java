@@ -32,7 +32,7 @@ public abstract class JugadorCartas {
 	 * @param Mesa instancia de la mesa en la que juega el jugador.
 	 * @return int 
 	 */
-	public abstract int pensar(Mesa m);
+	public abstract int pensar(Maso m);
 	
 	/**
 	 * El jugador recibe una carta pasada como parametro.

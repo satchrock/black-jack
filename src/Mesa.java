@@ -47,12 +47,6 @@ public class Mesa {
 		crupier.setMonto(-(apuesta*2));
 	}
 	
-	/**
-	 * En caso de empate...
-	 */
-	private void empate(){
-		ganador="EMPATE";
-	}
 	
 	/**
 	 * Metodo revisaJuego: Verifica quien gana la mano actual.
@@ -75,7 +69,7 @@ public class Mesa {
 					}else{
 						if(cuentaJugador==cuentaCrupier){
 							//empate
-							empate();
+							ganaCrupier();
 						}else{//gana el jugador
 							ganaJugador();
 						}
@@ -88,7 +82,7 @@ public class Mesa {
 					}else{
 						if(cuentaJugador<=21 && (cuentaCrupier!=21)){
 							ganaJugador();
-						}else empate();
+						}else ganaCrupier();
 					}		
 			}
 		}
@@ -141,7 +135,7 @@ public class Mesa {
 	}
 	
 	public void c_pensar(){
-		crupier.pensar(this);
+		crupier.pensar(maso);
 	}
 	
 	public Naipe c_darCarta(){
@@ -155,6 +149,10 @@ public class Mesa {
 	public Vector<Naipe> c_getCartas(){
 		return crupier.getCartas();
 	}	
+	
+	public void c_darVuelta(){
+		crupier.darVuelta();
+	}
 	//fin metodos de crupier.
 	
 	//------------------
@@ -193,6 +191,10 @@ public class Mesa {
 	
 	public Vector<Naipe> j_getCartas(){
 		return jugador.getCartas();
+	}
+	
+	public void j_setMonto(long m){
+		jugador.setMonto(m);
 	}
 	//fin metodos de jugador
 	//------------------
